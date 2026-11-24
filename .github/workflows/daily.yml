@@ -2,6 +2,11 @@
 # 使い方は docs/DATA_DELIVERY.md。
 name: daily-data
 on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/legal/**"
+      - ".github/workflows/daily.yml"
   schedule:
     - cron: "30 22 * * *"   # UTC 22:30 = JST 07:30
   workflow_dispatch:
